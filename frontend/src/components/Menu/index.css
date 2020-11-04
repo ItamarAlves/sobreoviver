@@ -1,0 +1,36 @@
+#menu{
+  background: #002ECF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  height: auto;
+}
+
+#logotipo{
+  width: 70px;
+  height: 70px;
+  top: 0px;
+}
+
+.navbar-default .navbar-toggle{
+  background-color: white !important;
+}
+
+#home, #dashboard, #blog{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  color: #FFFF00;
+  padding-left: 250px;
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+#icon-user{
+  color: #FFFF00;
+  padding-left: 250px;
+}

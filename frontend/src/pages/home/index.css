@@ -1,0 +1,53 @@
+figure{
+  position: relative;
+}
+
+#image-body{
+  margin-top: 20px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+#line-top{
+  position: absolute;
+  top: 150px;
+  left: 82px;
+  border: 3px solid #FF0;
+  width: 600px;
+}
+
+#title-photo{
+  position: absolute;
+  top: 150px;
+  left: 82px;
+  font-family: Roboto;
+  font-size: 72px;
+  font-weight: bold;
+  color: #002ECF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FFF;
+  text-shadow: 0px 6px 6px rgba(255, 255, 255, 0.25);
+}
+
+#message-photo{
+  position: absolute;
+  top: 250px;
+  left: 82px;
+  max-width: 600px;
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.5px; /* largura da borda */
+  -webkit-text-stroke-color: #FFF; /* cor da borda */
+  color: #002ECF;
+  text-shadow: 0px 6px 6px rgba(255, 255, 255, 0.25);
+}
+
+#line-bottom{
+  position: absolute;
+  top: 425px;
+  left: 82px;
+  border: 3px solid #FF0;
+  width: 600px;
+}

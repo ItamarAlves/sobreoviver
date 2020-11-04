@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import PersonaController  from './app/controllers/PersonaController';
+import DashboardController  from './app/controllers/DashboardController';
 
 const routes = new Router();
 
@@ -9,7 +9,7 @@ routes.get('/', (request, response) => {
 });
 
 //Persona
-routes.get('/persona', PersonaController.index);
-routes.post('/persona', PersonaController.store);
+routes.get('/dashboard', DashboardController.index);
+routes.post('/dashboard', DashboardController.store);
 
 export default routes;

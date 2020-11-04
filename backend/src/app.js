@@ -2,8 +2,6 @@ import express from 'express';
 import routes from './routes';
 import cors from 'cors';
 
-import './database/database';
-
 class App {
   constructor() {
     this.server = express();

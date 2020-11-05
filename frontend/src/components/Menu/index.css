@@ -14,23 +14,18 @@
   background-color: white !important;
 }
 
-#home, #dashboard, #blog{
+#home, #dashboard{
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 28px;
   color: #FFFF00;
-  padding-left: 250px;
+  padding-left: 350px;
 }
 
 .navbar-nav{
   display: flex;
   justify-content: center;
   align-items: center;  
-}
-
-#icon-user{
-  color: #FFFF00;
-  padding-left: 250px;
 }

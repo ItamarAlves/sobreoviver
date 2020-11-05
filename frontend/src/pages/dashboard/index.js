@@ -1,23 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './index.css';
 import Menu from '../../components/Menu';
-import Chart from '../../components/Chart';
+import Charts from '../../components/Charts';
 
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        <Menu />
-        <h1>Dashboard</h1>
-        <div class="input-group col-12 " id="pesquisaPalavra">
-          <input class="form-control border-right-0"
-          placeholder="Digite aqui a palavra que deseja pesquisar"/>
-          <span class="input-group-append bg-white">
-            <button class="btn border border-left-0" type="submit"><i class="fa fa-search"></i></button>
-          </span>
+const Dashboard = () => {
+  return (
+    <div>
+      <Menu />
+      <h1 id="text-dashboard">Dashboard</h1>
+      <div class="input-group col-12 " id="pesquisaPalavra">
+        <input class="form-control border-right-0"
+          placeholder="Digite aqui a palavra que deseja pesquisar" />
+        <span class="input-group-append bg-white">
+          <button class="btn border border-left-0" type="submit"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+      <div className="col-12">
+        <small id="emailHelp" class="form-text text-muted">Separe os termos por vírgula. Ex.: Termo 1, Termo 2, Termo 3.</small>
+      </div>
+      <div className="container-fluid">
+        <div className="row">
+          <Charts />
         </div>
-          <Chart />
-        </div>
-    );
-  }
+      </div>
+    </div>
+  );
 }
+
+export default Dashboard;

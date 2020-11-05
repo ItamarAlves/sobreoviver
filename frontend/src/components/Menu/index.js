@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css';
-//import { Link } from 'react-router-dom';
 import Logo from '../images/sobreoviverlogo.png';
 
 export default class Menu extends Component {
@@ -18,12 +17,6 @@ export default class Menu extends Component {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/dashboard" id="dashboard">Dashboard</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/blog" id="blog">Blog</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/login"><i class="fas fa-user-circle fa-2x" id="icon-user"></i></a>
             </li>
           </ul>
         </div>

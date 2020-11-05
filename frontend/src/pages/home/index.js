@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Menu from '../../components/Menu';
 import './index.css';
 import ImagemConteudo from '../images/FotoLiberdade.png';
 
-export default class Home extends Component{
-  render(){
+const Home = () =>{
     return(
       <div>
         <Menu />
@@ -21,4 +20,5 @@ export default class Home extends Component{
       </div>
     );
   }
-}
+
+export default Home;

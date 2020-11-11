@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 import Menu from '../../components/Menu';
 import Charts from '../../components/Charts';
+import Footer from '../../components/Footer';
 
 const Dashboard = () => {
   return (
@@ -22,6 +23,9 @@ const Dashboard = () => {
         <div className="row">
           <Charts />
         </div>
+      </div>
+      <div className="mt-5">
+        <Footer></Footer>
       </div>
     </div>
   );

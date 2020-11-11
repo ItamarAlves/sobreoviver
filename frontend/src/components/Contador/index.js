@@ -40,17 +40,17 @@ export default class Contador extends Component {
             <ul className="timeline mt-3">
               <li>
                 <h5><strong>{this.state.contador} Pessoa(s) já se Suicidaram</strong></h5>
-                <p>A cada 40 segundos, uma pessoa no mundo comete um suicídio.</p>
+                <p className="descricao-contador">A cada 40 segundos, uma pessoa no mundo comete um suicídio.</p>
                 <a className="btn btn-contador" href="http://www.conselho.saude.gov.br/ultimas-noticias-cns/809-um-suicidio-ocorre-a-cada-40-segundos-no-mundo-diz-organizacao-mundial-da-saude" target="blank"><strong>Saber Mais</strong></a>
               </li>
               <li>
                 <h5><strong>{this.state.contadorBrasil} Brasileiro(s) já se Suicidaram</strong></h5>
-                <p>A cada 46 minutos, uma brasileiro comete um suicídio. </p>
+                <p className="descricao-contador">A cada 46 minutos, uma brasileiro comete um suicídio. </p>
                 <a className="btn btn-contador" href="https://guiadafarmacia.com.br/depressao-e-suicidio-uma-pessoa-se-suicida-no-brasil-a-cada-46-minutos/" target="blank"><strong>Saber Mais</strong></a>
               </li>
               <li>
                 <h5><strong> Depressão: uma das causas do Suicídio</strong></h5>
-                <p>A depressão é um transtorno mental frequente. Em todo o mundo, estima-se que mais de 300 milhões de pessoas,
+                <p className="descricao-contador">A depressão é um transtorno mental frequente. Em todo o mundo, estima-se que mais de 300 milhões de pessoas,
                   de todas as idades, sofram esse transtorno.
                 </p>
                 <a className="btn btn-contador" href="https://www.paho.org/pt/topicos/depressao" target="blank"><strong>Saber Mais</strong></a>

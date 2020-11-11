@@ -7,7 +7,7 @@ export default class SobreNos extends Component {
   render() {
     return (
       <div id="container-sobreNos">
-      <div className="container mt-5 pt-3">
+      <div className="container mt-5 pt-3 pb-3">
         <div className="row">
           <div className="col-sm-6 text-center">
             <img src={FotoElemar} className="img-fluid foto-sobreNos" alt="Foto Elemar"></img>

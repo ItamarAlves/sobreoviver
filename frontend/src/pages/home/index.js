@@ -4,6 +4,7 @@ import './index.css';
 import ImagemConteudo from '../images/FotoLiberdade.png';
 import Contador from '../../components/Contador';
 import SobreNos from '../../components/SobreNos';
+import Footer from '../../components/Footer';
 
 const Home = () =>{
     return(
@@ -23,6 +24,7 @@ const Home = () =>{
       </div>
         <Contador></Contador>
         <SobreNos></SobreNos>
+        <Footer></Footer>
       </>
     );
   }

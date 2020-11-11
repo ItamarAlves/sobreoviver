@@ -34,7 +34,7 @@ ul.timeline > li:before {
   color: #002ECF;
 }
 
-li > h5{
+li > h5, .descricao-contador{
   color: #002ECF;
 }
 

@@ -2,9 +2,12 @@ import React from 'react';
 import Menu from '../../components/Menu';
 import './index.css';
 import ImagemConteudo from '../images/FotoLiberdade.png';
+import Contador from '../../components/Contador';
+import SobreNos from '../../components/SobreNos';
 
 const Home = () =>{
     return(
+      <>
       <div>
         <Menu />
         <p>
@@ -18,6 +21,9 @@ const Home = () =>{
           </figure>
         </p>
       </div>
+        <Contador></Contador>
+        <SobreNos></SobreNos>
+      </>
     );
   }
 

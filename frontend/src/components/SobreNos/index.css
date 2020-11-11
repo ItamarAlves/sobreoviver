@@ -1,0 +1,25 @@
+#container-sobreNos{
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+.foto-sobreNos{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.titulo-nome{
+  color: #002ECF;
+}
+
+.btn-redesSociais{
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #002ECF;
+  border: 1px solid #002ECF;
+}
+
+.btn-redesSociais:hover{
+  background-color: #002ECF;
+  color: #FFFFFF;
+}

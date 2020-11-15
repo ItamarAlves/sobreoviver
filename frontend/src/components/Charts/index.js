@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import './index.css';
+import api from '../../services/api'
 
 export default class Charts extends Component {
+
+  state = {
+    palavras: [],
+  }
+
+  async componentDidMount() {
+    const response = await api.get('/palavra');
+    console.log('posiciao 1'+ response.data);
+    this.setState({ palavras : response.data });
+  }
+
   constructor(props) {
     super(props);
+    // console.log('posiciao 2'+ palavras[0]);
     this.state = {
-      chartComparationSearch:{
-        labels: ['Termo 1', 'Termo 2', 'Termo 3', 'Termo 4', 'Termo 5', 'Termo 6', 'Termo 7'],
+      chartComparationSearch: {
+        labels: [],
         datasets: [{
           label: 'Comparativo dos Termos Pesquisados',
           data: [1500, 1250, 1000, 1325, 1000, 1243, 947],
@@ -32,7 +45,7 @@ export default class Charts extends Component {
           borderWidth: 1
         }]
       },
-
+      
       chartCasesSuicidesRegion: {
         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
         datasets: [{
@@ -93,17 +106,18 @@ export default class Charts extends Component {
   }
 
   render() {
+    const {palavras} = this.state;
+    this.state.chartComparationSearch.label = palavras;
     return (
       <>
         <div className="chart col-sm-12">
-          <Bar 
+          <Bar
             data={this.state.chartComparationSearch}
             options={{
               maintainAspectRatio: false
             }}>
           </Bar>
         </div>
-
 
         <div className="chart col-sm-6">
           <Line
@@ -126,3 +140,6 @@ export default class Charts extends Component {
   }
 }
 
+async function consultaPalavra() {
+  
+};

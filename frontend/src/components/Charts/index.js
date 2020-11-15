@@ -20,7 +20,7 @@ export default class Charts extends Component {
     // console.log('posiciao 2'+ palavras[0]);
     this.state = {
       chartComparationSearch: {
-        labels: [],
+        labels: ['Suicídio', 'como se suicidar', 'automutilação', 'morte certa', 'remédios para se matar', 'músicas de suícidio'],
         datasets: [{
           label: 'Comparativo dos Termos Pesquisados',
           data: [1500, 1250, 1000, 1325, 1000, 1243, 947],
@@ -46,6 +46,7 @@ export default class Charts extends Component {
         }]
       },
       
+
       chartCasesSuicidesRegion: {
         labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
         datasets: [{

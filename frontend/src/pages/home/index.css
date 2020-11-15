@@ -24,8 +24,6 @@ figure{
   font-size: 72px;
   font-weight: bold;
   color: #002ECF;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #FFF;
   text-shadow: 0px 6px 6px rgba(255, 255, 255, 0.25);
 }
 
@@ -36,9 +34,7 @@ figure{
   max-width: 600px;
   font-family: Roboto;
   font-size: 24px;
-  font-weight: bold;
-  -webkit-text-stroke-width: 0.5px; /* largura da borda */
-  -webkit-text-stroke-color: #FFF; /* cor da borda */
+  font-weight: 500px;
   color: #002ECF;
   text-shadow: 0px 6px 6px rgba(255, 255, 255, 0.25);
 }

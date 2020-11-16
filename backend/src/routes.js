@@ -10,9 +10,11 @@ routes.get('/', (request, response) => {
 });
 
 //Dashboard
-routes.get('/dashboard', DashboardController.index);
-routes.post('/dashboard', DashboardController.store);
+routes.get('/sobreoviver/dashboard/compare-palavra', DashboardController.comparePalavra);
+routes.get('/sobreoviver/dashboard/pesquisa/regiao', DashboardController.pesquisaRegiao);
+routes.get('/sobreoviver/dashboard/pesquisa/regiao-estado', DashboardController.pesquisaEstado);
 
-routes.get('/palavra', PalavraController.index);
+//Palavras
+routes.get('/sobreoviver/palavra', PalavraController.index);
 
 export default routes;

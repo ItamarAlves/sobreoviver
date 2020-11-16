@@ -48,7 +48,7 @@ export default class Charts extends Component {
       chartCasesSuicidesRegion: {
         labels: ['Norte', 'Nordeste', 'Centro Oeste', 'Sul', 'Sudeste'],
         datasets: [{
-          label: 'Casos de Suicídios Por Região No Brasil',
+          label: 'Quantidade dos Termo(s) Pesquisado(s) Por Regiões No Brasil',
           data: [30546, 25733, 22136, 27849, 26354],
           backgroundColor: [
             'rgba(54, 162, 235, 0.2)',
@@ -72,7 +72,7 @@ export default class Charts extends Component {
       chartTopFiveSearchSuicide: {
         labels: ['Rondônia', 'São Paulo', 'Rio de Janeiro', 'Mato Grosso', 'Amazonas'],
         datasets: [{
-          label: '5 Regiões com Maiores Pesquisas Relacionadas ao Suicídio',
+          label: '5 Estados com Maiores Pesquisas Relacionadas aos Termo(s) Pesquisado(s) no Brasil',
           data: [300, 250, 290, 150, 130],
           backgroundColor: [
             'rgba(243, 36, 36, 0.2)',

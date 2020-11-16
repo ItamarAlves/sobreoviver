@@ -1,0 +1,48 @@
+{
+    "default": {
+      "geoMapData": [
+        {
+          "geoCode": "BR-AP",
+          "geoName": "Amapá",
+          "value": [
+            100
+          ],
+          "formattedValue": [
+            "100"
+          ],
+          "maxValueIndex": 0,
+          "hasData": [
+            true
+          ]
+        },
+        {
+          "geoCode": "BR-PI",
+          "geoName": "Piauí",
+          "value": [
+            91
+          ],
+          "formattedValue": [
+            "91"
+          ],
+          "maxValueIndex": 0,
+          "hasData": [
+            true
+          ]
+        },
+        {
+          "geoCode": "BR-RO",
+          "geoName": "Rondônia",
+          "value": [
+            78
+          ],
+          "formattedValue": [
+            "78"
+          ],
+          "maxValueIndex": 0,
+          "hasData": [
+            true
+          ]
+        }
+      ]
+    }
+  }

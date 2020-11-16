@@ -4,18 +4,19 @@ import palavraList from '../palavra/Palavra.json'
 class DashboardController {
 
     async index(request, response) {
-        const palavra = request.query.pesquisa;
+        const palavra = request.query.palavra;
         
         if (palavra != null) {
-            const pesquisa = { keyword: request.query.pesquisa }
+        
+            const parameters = { keyword: request.query.palavra, geo:'BR', resolution:'region', hl:"pt-br"}
             
-            return consultarApi(response, pesquisa);
+            return consultApi(response, parameters);
             
         } else {
             console.log(palavraList.palavra)
             for (var i = 0; i < palavraList.palavra.length; i++) {
-                const pesquisa = { keyword: palavraList.palavra[i]}
-                result = consultarApi(response, pesquisa);
+                const parameters = { keyword: palavraList.palavra[i]}
+                result = consultApi(response, parameters);
 
             }
 
@@ -29,14 +30,15 @@ class DashboardController {
     }
 }
 
-function consultarApi(response, pesquisa) {
-    googleTrends.interestOverTime(pesquisa, function (err, results) {
+function consultApi(response, parameters) {
+    googleTrends.interestByRegion(parameters, function (err, results) {
         if (!err){
-            // console.log('resultados', results);
-            return response.status(200).json({ "result": results});
+            var dataResponse =  results.toString();
+            dataResponse = JSON.parse(dataResponse);
+
+            return response.status(200).json(dataResponse);
         } else {
-            console.error('Deu erro', err)
-            return response.status(500).json({ "error": "Tente novamente"});
+            return response.status(500).json({ "error": "Tente efetuar a solicitação novamente em alguns minutos, por gentileza."});
         };
         
     });

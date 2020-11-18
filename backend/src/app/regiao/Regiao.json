@@ -1,39 +1,9 @@
 {
-    "centro-oeste": [
-        "Goiás",
-        "Mato Grosso",
-        "Mato Grosso do Sul",
-        "Distrito Federal"
-    ],
-    "norte": [
-        "Acre",
-        "Amazonas",
-        "Amapá",
-        "Pará",
-        "Rondônia",
-        "Roraima",
-        "Tocantins"
-    ],
-    "nordeste": [
-        "Alagoas",
-        "Bahia",
-        "Ceará",
-        "Maranhão",
-        "Piauí",
-        "Pernambuco",
-        "Paraíba",
-        "Rio Grande do Norte",
-        "Sergipe"
-    ],
-    "sul": [
-        "Paraná",
-        "Rio Grande do Sul",
-        "Santa Catarina"
-    ],
-    "sudeste": [
-        "Espírito Santo",
-        "Minas Gerais",
-        "Rio de Janeiro",
-        "São Paulo"
+    "regiao": [
+        "centro-oeste",
+        "norte",
+        "nordeste",
+        "sul",
+        "sudeste"
     ]
 }

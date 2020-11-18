@@ -34,9 +34,9 @@ Servidor no ar.
 ```shell
 $ cd /frontend
 
-$ nmp install
+$ npm install
 
-$ nmp start
+$ npm start
 ```
 
 #### Caso dê algum erro ao atualizar bibliotecas do npm, tenta efetuar o seguinte passo.

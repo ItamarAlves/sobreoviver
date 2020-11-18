@@ -11,7 +11,7 @@ const Dashboard = () => {
       <h1 id="text-dashboard">Dashboard</h1>
       <form id="formPalavra" action={Charts} method="GET" >
         <div class="input-group col-12 " id="pesquisaPalavra">
-          <input class="form-control border-right-0" id="palavra"
+          <input class="form-control border-right-0" id="palavra" name="palavra"
             placeholder="Digite aqui a palavra que deseja pesquisar" />
           <span class="input-group-append bg-white">
             <button class="btn border border-left-0" type="submit"><i class="fa fa-search"></i></button>

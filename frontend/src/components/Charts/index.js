@@ -12,16 +12,19 @@ export default class Charts extends Component {
   }
 
   async componentDidMount() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const palavra = urlParams.get('palavra');
+    const palavraArray = [palavra];
     //consultar endpoint /compare-palavra
-    const dataResComPal = await api.get('/dashboard/compare-palavra?palavra=suicidio&palavra=musica%20para%20se%20matar&palavra=morte');
+    const dataResComPal = await api.get('/dashboard/compare-palavra?palavra='+palavraArray);
     this.setState({ chartComparationSearch: dataResComPal.data });
 
     //consultar endpoint /pesquisa/regiao
-    const dataResPesReg = await api.get('/dashboard/pesquisa/regiao?palavra=suicidio');
+    const dataResPesReg = await api.get('/dashboard/pesquisa/regiao?palavra='+palavra);
     this.setState({ chartCasesSuicidesRegion: dataResPesReg.data });
 
     //consultar endpoint /pesquisa/regiao-estado
-    const dataResPesEst = await api.get('/dashboard/pesquisa/regiao-estado?palavra=suicidio&top=5');
+    const dataResPesEst = await api.get('/dashboard/pesquisa/regiao-estado?palavra='+palavra+'&top=5');
     this.setState({ chartTopFiveSearchSuicide: dataResPesEst.data });
   }
 
@@ -31,7 +34,7 @@ export default class Charts extends Component {
 
   render() {
 
-    const { chartComparationSearch, chartCasesSuicidesRegion, chartTopFiveSearchSuicide} = this.state;
+    const { chartComparationSearch, chartCasesSuicidesRegion, chartTopFiveSearchSuicide } = this.state;
 
     return (
       <>

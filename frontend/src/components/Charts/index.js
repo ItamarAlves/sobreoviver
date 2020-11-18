@@ -14,17 +14,42 @@ export default class Charts extends Component {
   async componentDidMount() {
     const urlParams = new URLSearchParams(window.location.search);
     const palavra = urlParams.get('palavra');
-    const palavraArray = [palavra];
+
+    if (palavra != null) {
+      if (palavra.indexOf(",") != -1) {
+        var palavraCompara;
+        var palavraArrayTemp = palavra.split(",");
+        var size = palavraArrayTemp.length - 1;
+        for (var a = 0; a < palavraArrayTemp.length; a++) {
+          var pal;
+          if (a == 0) {
+            var pal = palavraArrayTemp[a];
+            pal += "&";
+          } else {
+            pal += "palavra=";
+            pal += palavraArrayTemp[a];
+            if (a != size) {
+              pal += "&";
+            } else {
+              palavraCompara = pal;
+            }
+          }
+        }
+      } else {
+        palavraCompara = palavra;
+      }
+    }
+
     //consultar endpoint /compare-palavra
-    const dataResComPal = await api.get('/dashboard/compare-palavra?palavra='+palavraArray);
+    const dataResComPal = await api.get('/dashboard/compare-palavra?palavra=' + palavraCompara);
     this.setState({ chartComparationSearch: dataResComPal.data });
 
     //consultar endpoint /pesquisa/regiao
-    const dataResPesReg = await api.get('/dashboard/pesquisa/regiao?palavra='+palavra);
+    const dataResPesReg = await api.get('/dashboard/pesquisa/regiao?palavra=' + palavra);
     this.setState({ chartCasesSuicidesRegion: dataResPesReg.data });
 
     //consultar endpoint /pesquisa/regiao-estado
-    const dataResPesEst = await api.get('/dashboard/pesquisa/regiao-estado?palavra='+palavra+'&top=5');
+    const dataResPesEst = await api.get('/dashboard/pesquisa/regiao-estado?palavra=' + palavra + '&top=5');
     this.setState({ chartTopFiveSearchSuicide: dataResPesEst.data });
   }
 

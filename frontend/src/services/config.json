@@ -1,4 +1,5 @@
 {
     "url": "http://127.0.0.1:",
-    "porta": "2050"
+    "porta": "2050",
+    "path": "/sobreoviver"
 }

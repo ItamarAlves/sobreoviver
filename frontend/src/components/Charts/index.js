@@ -6,110 +6,63 @@ import api from '../../services/api';
 export default class Charts extends Component {
 
   state = {
-    palavras: [],
+    chartComparationSearch: {},
+    chartCasesSuicidesRegion: {},
+    chartTopFiveSearchSuicide: {},
   }
 
   async componentDidMount() {
-    const response = await api.get('/palavra');
-    console.log('posiciao 1'+ response.data);
-    this.setState({ palavras : response.data });
+    //consultar endpoint /compare-palavra
+    const dataResComPal = await api.get('/dashboard/compare-palavra?palavra=suicidio&palavra=musica%20para%20se%20matar&palavra=morte');
+    this.setState({ chartComparationSearch: dataResComPal.data });
+
+    //consultar endpoint /pesquisa/regiao
+    const dataResPesReg = await api.get('/dashboard/pesquisa/regiao?palavra=suicidio');
+    this.setState({ chartCasesSuicidesRegion: dataResPesReg.data });
+
+    //consultar endpoint /pesquisa/regiao-estado
+    const dataResPesEst = await api.get('/dashboard/pesquisa/regiao-estado?palavra=suicidio&top=5');
+    this.setState({ chartTopFiveSearchSuicide: dataResPesEst.data });
   }
 
   constructor(props) {
     super(props);
-    // console.log('posiciao 2'+ palavras[0]);
-    this.state = {
-      chartComparationSearch: {
-        labels: ['Suicídio', 'como se suicidar', 'automutilação', 'morte certa', 'remédios para se matar', 'músicas de suícidio'],
-        datasets: [{
-          label: 'Comparativo dos Termos Pesquisados',
-          data: [1500, 1250, 1000, 1325, 1000, 1243, 947],
-          backgroundColor: [
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
-          ],
-          borderColor: [
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      
-
-      chartCasesSuicidesRegion: {
-        labels: ['Norte', 'Nordeste', 'Centro Oeste', 'Sul', 'Sudeste'],
-        datasets: [{
-          label: 'Quantidade dos Termo(s) Pesquisado(s) Por Regiões No Brasil',
-          data: [30546, 25733, 22136, 27849, 26354],
-          backgroundColor: [
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
-          ],
-          borderColor: [
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(54, 162, 235, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-
-
-      chartTopFiveSearchSuicide: {
-        labels: ['Rondônia', 'São Paulo', 'Rio de Janeiro', 'Mato Grosso', 'Amazonas'],
-        datasets: [{
-          label: '5 Estados com Maiores Pesquisas Relacionadas aos Termo(s) Pesquisado(s) no Brasil',
-          data: [300, 250, 290, 150, 130],
-          backgroundColor: [
-            'rgba(243, 36, 36, 0.2)',
-            'rgba(243, 36, 36, 0.2)',
-            'rgba(243, 36, 36, 0.2)',
-            'rgba(243, 36, 36, 0.2)',
-            'rgba(243, 36, 36, 0.2)'
-          ],
-          borderColor: [
-            'rgba(243, 36, 36, 0.4)',
-            'rgba(243, 36, 36, 0.4)',
-            'rgba(243, 36, 36, 0.4)',
-            'rgba(243, 36, 36, 0.4)',
-            'rgba(243, 36, 36, 0.4)'
-          ],
-        }],
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      }
-    }
   }
 
   render() {
-    const {palavras} = this.state;
-    this.state.chartComparationSearch.label = palavras;
+
+    const { chartComparationSearch, chartCasesSuicidesRegion, chartTopFiveSearchSuicide} = this.state;
+
     return (
       <>
         <div className="chart col-sm-12">
           <Bar
-            data={this.state.chartComparationSearch}
+            data={
+              {
+                labels: chartComparationSearch.labels,
+                datasets: [{
+                  label: 'Comparativo dos Termos Pesquisados',
+                  data: chartComparationSearch.data,
+                  backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+                }]
+              }
+            }
             options={{
               maintainAspectRatio: false
             }}>
@@ -118,7 +71,30 @@ export default class Charts extends Component {
 
         <div className="chart col-sm-6">
           <Line
-            data={this.state.chartCasesSuicidesRegion}
+            data={
+              {
+                labels: chartCasesSuicidesRegion.labels,
+                datasets: [{
+                  label: 'Quantidade dos Termo(s) Pesquisado(s) Por Regiões No Brasil',
+                  data: chartCasesSuicidesRegion.data,
+                  backgroundColor: [
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(54, 162, 235, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(54, 162, 235, 1)'
+                  ],
+                  borderWidth: 1
+                }]
+              }
+            }
             options={{
               maintainAspectRatio: false
             }}>
@@ -126,7 +102,29 @@ export default class Charts extends Component {
         </div>
         <div className="chart col-sm-6">
           <Line
-            data={this.state.chartTopFiveSearchSuicide}
+            data={
+              {
+                labels: chartTopFiveSearchSuicide.labels,
+                datasets: [{
+                  label: '5 Estados com Maiores Pesquisas Relacionadas aos Termo(s) Pesquisado(s) no Brasil',
+                  data: chartTopFiveSearchSuicide.data,
+                  backgroundColor: [
+                    'rgba(243, 36, 36, 0.2)',
+                    'rgba(243, 36, 36, 0.2)',
+                    'rgba(243, 36, 36, 0.2)',
+                    'rgba(243, 36, 36, 0.2)',
+                    'rgba(243, 36, 36, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(243, 36, 36, 0.4)',
+                    'rgba(243, 36, 36, 0.4)',
+                    'rgba(243, 36, 36, 0.4)',
+                    'rgba(243, 36, 36, 0.4)',
+                    'rgba(243, 36, 36, 0.4)'
+                  ],
+                }],
+              }
+            }
             options={{
               maintainAspectRatio: false
             }}>
@@ -136,7 +134,3 @@ export default class Charts extends Component {
     );
   }
 }
-
-async function consultaPalavra() {
-  
-};

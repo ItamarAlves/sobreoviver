@@ -10,9 +10,16 @@ class DashboardController {
         }
 
         const palavra = request.query.palavra;
+        console.log(palavra)
 
-        if (palavra != null && palavra != '') {
-            palavraArray.palavra.push(palavra)
+        if (palavra[0] != null && palavra[0] != '') {
+            if (palavra.length > 1) {
+                for (var t = 0; t < palavra.length; t++) {
+                    palavraArray.palavra.push(palavra[t]);
+                }
+            } else {
+                palavraArray.palavra.push(palavra[0]);
+            }
         } else {
             for (var i = 0; i < palavraList.palavra.length; i++) {
                 palavraArray.palavra.push(palavraList.palavra[i]);
@@ -71,6 +78,9 @@ class DashboardController {
                 };
 
                 var valueTotal = 0;
+                for (var r = 0; r < regiaoList.length; r++) {
+
+                }
 
                 // for (var x = 0; x < dataRes.data.length; x++) {
                 //     var percPalavra = Math.round((dataRes.data[x] / valueTotal) * 100, 2);
@@ -108,7 +118,6 @@ class DashboardController {
                 return response.status(500).json({ "error": "Tente efetuar a solicitação novamente em alguns minutos, por gentileza." });
             };
         });
-
     }
 }
 

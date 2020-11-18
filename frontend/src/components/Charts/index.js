@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
 import './index.css';
-import api from '../../services/api'
+import api from '../../services/api';
 
 export default class Charts extends Component {
 

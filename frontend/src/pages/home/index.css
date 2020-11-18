@@ -46,3 +46,59 @@ figure{
   border: 3px solid #FF0;
   width: 600px;
 }
+
+@media(max-width: 900px){
+  #line-top{
+    top: 75px;
+    left: 41px;
+    width: 300px;
+  }
+
+  #title-photo{
+    top: 75px;
+    left: 41px;
+    font-size: 36px;
+    max-width: 300px;
+  }
+
+  #message-photo{
+    top: 125px;
+    left: 41px;
+    font-size: 12px;
+    max-width: 300px;
+  }
+
+  #line-bottom{
+    top: 212.5px;
+    left: 41px;
+    width: 300px;
+  }
+}
+
+@media(min-width: 900px){
+  #line-top{
+    top: 75px + 30%;
+    left: 41px + 30%;
+    width: 300px + 30%;
+  }
+
+  #title-photo{
+    top: 75px + 30%;
+    left: 41px + 30%;
+    font-size: 36px + 30%;
+    max-width: 300px + 30%;
+  }
+
+  #message-photo{
+    top: 125px + 30%;
+    left: 41px + 30%;
+    font-size: 12px + 30%;
+    max-width: 300px + 30%;
+  }
+
+  #line-bottom{
+    top: 212.5px + 30%;
+    left: 41px + 30%;
+    width: 300px + 30%;
+  }
+}

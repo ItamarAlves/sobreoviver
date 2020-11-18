@@ -14,8 +14,8 @@ export default class SobreNos extends Component {
             <h1 className="titulo-nome">Elemar Leonel</h1>
             <p className="descricao">Formado em Análise e Desenvolvimento, graduando pelo 8º período de Sistemas de Informação.</p>
             <div className="redes-sociais">
-              <a href="" className="btn btn-redesSociais"><i class="fab fa-instagram"></i></a>
-              <a href="" className="btn btn-redesSociais ml-3"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/elemar_leonel/" className="btn btn-redesSociais"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/elemar-leonel/" className="btn btn-redesSociais ml-3"><i className="fab fa-linkedin-in"></i></a>
             </div>
           </div>
           <div className="col-sm-6 text-center">
@@ -23,8 +23,8 @@ export default class SobreNos extends Component {
             <h1 className="titulo-nome">Itamar Alves</h1>
             <p className="descricao">Formado em Análise e Desenvolvimento, graduando pelo 8º período de Sistemas de Informação.</p>
             <div className="redes-sociais">
-              <a href="" className="btn btn-redesSociais"><i className="fab fa-instagram"></i></a>
-              <a href="" className="btn btn-redesSociais ml-3"><i className="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/itamaralvesr/" className="btn btn-redesSociais"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/alvesitamar/" className="btn btn-redesSociais ml-3"><i className="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>

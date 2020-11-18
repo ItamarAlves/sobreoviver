@@ -17,7 +17,7 @@ export default class Charts extends Component {
 
   constructor(props) {
     super(props);
-    // console.log('posiciao 2'+ palavras[0]);
+    // 
     this.state = {
       chartComparationSearch: {
         labels: ['Suicídio', 'como se suicidar', 'automutilação', 'morte certa', 'remédios para se matar', 'músicas de suícidio'],
@@ -103,8 +103,6 @@ export default class Charts extends Component {
   }
 
   render() {
-    const {palavras} = this.state;
-    this.state.chartComparationSearch.label = palavras;
     return (
       <>
         <div className="chart col-sm-12">

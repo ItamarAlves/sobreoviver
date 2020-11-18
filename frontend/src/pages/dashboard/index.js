@@ -10,11 +10,13 @@ const Dashboard = () => {
       <Menu />
       <h1 id="text-dashboard">Dashboard</h1>
       <div class="input-group col-12 " id="pesquisaPalavra">
-        <input class="form-control border-right-0"
+        <form id="formPalavra" action={Charts} method="GET" >
+        <input class="form-control border-right-0" id="palavra"
           placeholder="Digite aqui a palavra que deseja pesquisar" />
         <span class="input-group-append bg-white">
           <button class="btn border border-left-0" type="submit"><i class="fa fa-search"></i></button>
         </span>
+        </form>
       </div>
       <div className="col-12">
         <small id="emailHelp" class="form-text text-muted">Separe os termos por vírgula. Ex.: Termo 1, Termo 2, Termo 3.</small>

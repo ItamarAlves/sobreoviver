@@ -11,7 +11,10 @@ class DashboardController {
         }
 
         const palavra = request.query.palavra;
-        console.log(palavra)
+
+        if(typeof palavra === 'string') {
+            return response.json({"message": "Para comparar, Você deve nos enviar mais de uma palavra!"});
+        }
 
         if (palavra[0] != null && palavra[0] != '') {
             if (palavra.length > 1) {
